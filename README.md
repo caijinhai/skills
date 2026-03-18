@@ -19,6 +19,7 @@
 | [tts-apple](./tts-apple) | macOS Say 命令 | 本地离线、无需网络 | `macOS` `离线` |
 | [tts-edge](./tts-edge) | Microsoft Edge TTS | 语音自然、支持多语音 | `云端` `高自然度` |
 | [tts-pocket](./tts-pocket) | PocketTTS | 纯 Go 实现、本地离线 | `Go` `离线` |
+| [tts-indextts](./tts-indextts) | Index-TTS | 高质量本地离线 TTS | `Python` `离线` |
 
 ### 📊 信息监控
 
@@ -70,6 +71,7 @@ skills/
 ├── tts-apple/              # TTS: macOS Say
 ├── tts-edge/               # TTS: Microsoft Edge
 ├── tts-pocket/             # TTS: PocketTTS
+├── tts-indextts/           # TTS: Index-TTS (高质量本地离线)
 ├── github-trending/        # 监控: GitHub Trending
 ├── twitter-trending/       # 监控: Twitter Trending
 ├── feishu-file-upload/     # 飞书: 文件上传
