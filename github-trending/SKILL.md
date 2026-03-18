@@ -40,7 +40,7 @@ github-trending/
 编辑 `skill.yaml` 配置目标多维表格信息：
 ```yaml
 bitable:
-  app_token: "FiWUbJIA1aesMSs3wDzc4GuQnKf"
+  app_token: "YOUR_APP_TOKEN"
   table_id: "tblR69If9EY4FcEW"
 ```
 
