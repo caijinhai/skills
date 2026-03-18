@@ -36,3 +36,9 @@ python3 send_voice.py "文本内容" "接收者ID"
 ## 许可证
 
 MIT
+## 新增 Skills (2026-03-18)
+
+- github-trending: GitHub Trending 监控
+- twitter-trending: Twitter Trending 监控  
+- feishu-file-upload: 飞书文件上传
+- deepseek-api-search: DeepSeek API 搜索
