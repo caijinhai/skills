@@ -25,7 +25,7 @@ OpenClaw 的 `feishu_drive` 工具没有直接的 upload 功能。
   "action": "create",
   "title": "文件名",
   "folder_token": "目标目录token",
-  "owner_open_id": "ou_15e92b9af898346b135de2d06eae50d5"
+  "owner_open_id": "YOUR_OPEN_ID"
 }
 
 // 第2步：上传文件到该文档
@@ -87,7 +87,7 @@ curl -X POST 'https://open.feishu.cn/open-apis/drive/v1/files/upload_all' \
 {
   "action": "create",
   "title": "temp-upload-container",
-  "owner_open_id": "ou_15e92b9af898346b135de2d06eae50d5"
+  "owner_open_id": "YOUR_OPEN_ID"
 }
 ```
 
@@ -126,7 +126,7 @@ curl -X POST 'https://open.feishu.cn/open-apis/drive/v1/files/upload_all' \
   "action": "create",
   "title": "文件名",
   "folder_token": "目标目录token",
-  "owner_open_id": "ou_15e92b9af898346b135de2d06eae50d5"
+  "owner_open_id": "YOUR_OPEN_ID"
 }
 ```
 
@@ -136,10 +136,10 @@ curl -X POST 'https://open.feishu.cn/open-apis/drive/v1/files/upload_all' \
 
 | Agent | 目录名 | Token |
 |-------|--------|-------|
-| 海贼王助手 | 海贼王助手 | `Dj0PfHtTvlri25dBnhgcgbImnjh` |
-| 每日资讯 | 每日资讯 | `SwIBf67DClHcSYdSd26cco4Jn6c` |
-| 研发君 | 研发君 | `FeFlfRGsmlG8d8djDNkc5e0inqh` |
-| 产品君 | 产品君 | `Ewo3fmXONlJuq2dq31tcMlA9nnb` |
+| 海贼王助手 | 海贼王助手 | `YOUR_FOLDER_TOKEN_1` |
+| 每日资讯 | 每日资讯 | `YOUR_FOLDER_TOKEN_2` |
+| 研发君 | 研发君 | `YOUR_FOLDER_TOKEN_3` |
+| 产品君 | 产品君 | `YOUR_FOLDER_TOKEN_4` |
 
 ## 完整示例：上传 zip 文件到海贼王助手目录
 
@@ -148,7 +148,7 @@ curl -X POST 'https://open.feishu.cn/open-apis/drive/v1/files/upload_all' \
 {
   "action": "create",
   "title": "temp-container",
-  "owner_open_id": "ou_15e92b9af898346b135de2d06eae50d5"
+  "owner_open_id": "YOUR_OPEN_ID"
 }
 
 // 返回: { "document_id": "ThHqdpTXRo4d97xZVs7cCA9gnOe", ... }
@@ -168,7 +168,7 @@ curl -X POST 'https://open.feishu.cn/open-apis/drive/v1/files/upload_all' \
   "action": "move",
   "file_token": "A4ExbCY0Yo28EcxZ3Z7caOUGnJh",
   "type": "file",
-  "folder_token": "Dj0PfHtTvlri25dBnhgcgbImnjh"
+  "folder_token": "YOUR_FOLDER_TOKEN_1"
 }
 ```
 

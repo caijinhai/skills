@@ -17,7 +17,7 @@ dependencies:
 # 飞书多维表格配置
 bitable:
   app_token: "YOUR_APP_TOKEN"
-  table_id: "tblR69If9EY4FcEW"
+  table_id: "YOUR_TABLE_ID"
   # 字段映射（根据实际表格字段调整）
   fields:
     project_name: "项目名称"

@@ -41,7 +41,7 @@ github-trending/
 ```yaml
 bitable:
   app_token: "YOUR_APP_TOKEN"
-  table_id: "tblR69If9EY4FcEW"
+  table_id: "YOUR_TABLE_ID"
 ```
 
 ## 输出字段
