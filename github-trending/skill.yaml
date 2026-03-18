@@ -1,0 +1,42 @@
+# GitHub Trending Skill Configuration
+name: github-trending
+version: 1.0.0
+description: 抓取 GitHub Trending 热点项目并写入飞书多维表格
+author: 每日资讯 Agent
+
+# 依赖配置
+dependencies:
+  skills:
+    - feishu-doc
+  mcp_tools:
+    - web_fetch
+    - feishu_bitable_create_record
+    - feishu_bitable_list_fields
+    - feishu_bitable_update_record
+
+# 飞书多维表格配置
+bitable:
+  app_token: "YOUR_APP_TOKEN"
+  table_id: "tblR69If9EY4FcEW"
+  # 字段映射（根据实际表格字段调整）
+  fields:
+    project_name: "项目名称"
+    rank: "排名"
+    stars: "星标数"
+    description: "描述"
+    language: "语言"
+    url: "URL"
+    tags: "标签"
+    date: "日期"
+
+# 抓取配置
+scraping:
+  url: "https://github.com/trending"
+  default_limit: 10
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+  delay_ms: 1000
+
+# 输出配置
+output:
+  format: "bitable"
+  date_format: "yyyy/MM/dd"
