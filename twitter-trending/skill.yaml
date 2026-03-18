@@ -1,0 +1,56 @@
+# Twitter Trending Skill Configuration
+name: twitter-trending
+version: 1.0.0
+description: 抓取 Twitter/X 热点推文并写入飞书多维表格
+author: 每日资讯 Agent
+
+# 依赖配置
+dependencies:
+  skills:
+    - agent-browser
+    - feishu-doc
+  mcp_tools:
+    - browser
+    - feishu_bitable_create_record
+    - feishu_bitable_list_fields
+    - feishu_bitable_update_record
+
+# 飞书多维表格配置
+bitable:
+  app_token: "U9LXbdWnYa2CZLs5Wq3cu1u5nef"
+  table_id: "tblugTl6xfiQlKDW"
+  # 字段映射（根据实际表格字段调整）
+  fields:
+    content: "推文内容"
+    rank: "排名"
+    author: "作者"
+    likes: "点赞数"
+    retweets: "转发数"
+    url: "链接"
+    tags: "标签"
+    date: "Text 3"
+
+# 浏览器配置
+browser:
+  profile: "user"
+  timeout_ms: 30000
+  load_state: "networkidle"
+  
+# Twitter 配置
+twitter:
+  base_url: "https://twitter.com"
+  trends_url: "https://twitter.com/i/trends"
+  explore_url: "https://twitter.com/explore"
+  default_limit: 10
+  require_login: true
+
+# 抓取配置
+scraping:
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+  delay_ms: 2000
+  retry_count: 3
+
+# 输出配置
+output:
+  format: "bitable"
+  date_format: "yyyy/MM/dd"
