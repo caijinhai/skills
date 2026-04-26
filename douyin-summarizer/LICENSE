@@ -1,0 +1,125 @@
+# douyin-summarizer
+
+抖音链接文案抓取总结技能。自动下载抖音视频、提取音频、语音转文本并生成结构化总结文档。
+
+## 功能
+
+- 🎬 解析抖音分享链接，获取无水印视频
+- 📥 下载无水印视频到本地
+- 🎵 从视频中提取 MP3 音频
+- 🎤 语音转文本（支持 whisper）
+- 📝 生成 Markdown 格式总结文档
+
+## 支持链接格式
+
+- `https://www.douyin.com/video/1234567890`
+- `https://v.douyin.com/xxxxx/`
+- `https://douyin.com/share/video/1234567890`
+- 包含链接的分享文本
+
+## 安装依赖
+
+### 必需依赖
+
+```bash
+# Python 依赖
+pip install requests ffmpeg-python
+
+# 系统依赖（macOS）
+brew install ffmpeg
+
+# 或 Linux
+sudo apt install ffmpeg
+```
+
+### 可选依赖（语音转文本）
+
+```bash
+# macOS
+brew install whisper
+
+# 或通过 pip
+pip install openai-whisper
+```
+
+## 使用方式
+
+### 命令行使用
+
+```bash
+# 完整处理（解析 + 下载 + 转文本 + 总结）
+python douyin_processor.py --link "抖音分享链接"
+
+# 保存视频文件
+python douyin_processor.py --link "抖音分享链接" --save-video
+
+# 指定输出目录
+python douyin_processor.py --link "抖音分享链接" --output ./output
+
+# 安静模式
+python douyin_processor.py --link "抖音分享链接" --quiet
+```
+
+### Node.js 调用
+
+```javascript
+const { processDouyinLink, checkDependencies } = require('./index.js');
+
+// 检查依赖
+const deps = await checkDependencies();
+console.log(deps);
+
+// 处理抖音链接
+const result = await processDouyinLink('https://v.douyin.com/xxxxx');
+console.log(result);
+```
+
+## 输出结构
+
+```
+douyin-output/
+└── {video_id}/
+    ├── summary.md      # 总结文档
+    ├── {video_id}.mp4  # 视频文件（可选）
+    └── {video_id}.mp3  # 音频文件
+```
+
+## 总结文档格式
+
+```markdown
+# 抖音视频总结
+
+## 基本信息
+- **标题**: 视频标题
+- **作者**: 作者名
+- **视频 ID**: `xxx`
+- **提取时间**: 2026-03-19 20:51:00
+
+## 视频文案
+[识别的完整文案内容]
+
+## 关键要点
+待分析...
+
+## 总结
+待生成...
+```
+
+## 工作流程
+
+1. **解析链接** - 模拟移动端访问，解析抖音分享链接获取无水印视频地址
+2. **下载视频** - 下载无水印视频到临时目录
+3. **提取音频** - 使用 ffmpeg 从视频中提取 MP3 音频
+4. **语音识别** - 调用 whisper CLI 进行语音转文本
+5. **文档生成** - 创建 Markdown 格式的总结文档
+
+## 注意事项
+
+1. 抖音视频需要公开可访问
+2. 部分视频可能需要登录才能查看完整内容
+3. 语音转文本需要安装 whisper
+4. 临时文件会自动清理
+
+## License
+
+MIT

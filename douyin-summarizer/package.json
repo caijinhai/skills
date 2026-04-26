@@ -1,0 +1,21 @@
+{
+  "name": "douyin-summarizer",
+  "version": "1.0.0",
+  "description": "抖音链接文案抓取总结技能 - 自动下载视频、提取音频、语音转文本并生成总结",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "douyin",
+    "tiktok",
+    "summarizer",
+    "video",
+    "content-extraction",
+    "whisper",
+    "speech-to-text"
+  ],
+  "author": "Cesar",
+  "license": "MIT",
+  "dependencies": {}
+}
